@@ -13,8 +13,8 @@ class NormaliseAlert(PluginBase):
 
         LOG.info("Normalising alert...")
 
-        # prepend severity to alert text
-        alert.text = '%s: %s is %s on %s' % (alert.severity.upper(), alert.group, alert.event, alert.resource)
+        # format alert text
+        alert.text = '%s: %s says %s on %s' % (alert.severity.upper(), alert.group, alert.event, alert.resource)
 
         # supply different default values if missing
         if not alert.group or alert.group == 'Misc':
